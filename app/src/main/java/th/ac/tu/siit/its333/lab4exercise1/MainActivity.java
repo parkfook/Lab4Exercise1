@@ -41,7 +41,9 @@ public class MainActivity extends ActionBarActivity {
         TextView tvCR = (TextView)findViewById(R.id.tvCR);
         tvCR.setText(String.valueOf(credit));
         TextView tvGPA = (TextView)findViewById(R.id.tvGPA);
+
         double GPA =  grade / credit;
+        if (credit == 0 ) {GPA = 0; }
         tvGPA.setText(String.format("%.2f",GPA));
 
     }

@@ -46,7 +46,7 @@ public class ListCourseActivity extends ActionBarActivity implements
 
             // retrieve a new collection of records
             Cursor cursor = db.rawQuery(
-                    "SELECT _id, code, (' '|| grade || ' ' || credit || ' credits') title FROM course;",
+                    "SELECT _id,code,(grade || ' ' || ' ( ' || credit || ' credits' || ')') title FROM course;",
                     null);
 
             // update the adapter
@@ -73,7 +73,7 @@ public class ListCourseActivity extends ActionBarActivity implements
 
         helper = new CourseDBHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT _id, code, (' '|| grade || ' ' || credit || ' credits') title FROM course;",null);
+        Cursor cursor = db.rawQuery("SELECT _id,code,(grade || ' ' || ' ( ' || credit || ' credits' || ')') title FROM course;",null);
 
         adapter = new SimpleCursorAdapter(this,
                 android.R.layout.simple_list_item_2,
@@ -90,17 +90,7 @@ public class ListCourseActivity extends ActionBarActivity implements
 
     }
 
-    /*
-                'A (1 Credit)'
 
-                'x (y Credit)'
-
-                '' || x || ' (' || y || ' Credit)'
-
-                x || ' (' || y || ' Credit)'
-
-                grade || ' (' || credit || ' Credit)'
-    */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

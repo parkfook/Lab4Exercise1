@@ -46,7 +46,7 @@ public class ListCourseActivity extends ActionBarActivity implements
 
             // retrieve a new collection of records
             Cursor cursor = db.rawQuery(
-                    "SELECT _id, code, (' '|| grade || ' ' || credit || ' credits') title FROM course;",
+                    "SELECT * FROM course;",
                     null);
 
             // update the adapter

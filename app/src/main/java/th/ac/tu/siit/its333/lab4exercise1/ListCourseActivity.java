@@ -62,14 +62,7 @@ public class ListCourseActivity extends ActionBarActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_course);
 
-        /*
-         helper = new CourseDBHelper(this.getApplicationContext());
-         SQLiteDatabase db = helper.getReadableDatabase();
-         Cursor cursor = db.rawQuery("SELECT * FROM course ORDER BY title DESC;",null);
-         cursor.moveToFirst();
-         String title = cursor.getString(0); // id
-         String code = cursor.getString(1); // code
-        */
+
 
         helper = new CourseDBHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();

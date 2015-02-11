@@ -85,8 +85,8 @@ public class MainActivity extends ActionBarActivity {
                 SQLiteDatabase db = helper.getWritableDatabase();
                 ContentValues r = new ContentValues();
 
-                r.put("code",code.toString());
-                r.put("grade",grade.toString());
+                r.put("code",code);
+                r.put("grade",grade);
                 r.put("credit",credit);
                 r.put("value",gradeToValue(grade.toString()));
                 long new_id = db.insert("course",null,r);
